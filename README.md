@@ -14,6 +14,7 @@ Para comenzar a utilizar este blog en tu entorno local, sigue estos pasos:
 4. **Inicia el servidor de desarrollo:** npm run dev
 
 📋 Características
+
 Página de inicio: Muestra una vista general de los artículos más recientes.
 Sección de Categorías: Permite explorar los artículos por categoría.
 Responsive Design: El blog es completamente responsive, adaptándose a diferentes tamaños de pantalla.
