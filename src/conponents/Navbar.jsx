@@ -4,10 +4,12 @@ import { NavLink } from 'react-router-dom'
 // react icons
 import { FaFacebook, FaXTwitter, FaInstagram, FaBars, FaXmark } from "react-icons/fa6";
 import Modal from '../conponents/Modal';
+import RegisterModal from './RegsiterModal';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isRegisterOpen, setIsRegisterOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -28,6 +30,15 @@ const Navbar = () => {
   const closeModal = () => {
     setIsModalOpen(false);
   }
+
+  //Modal Register
+  const handleOpenModal = () => {
+    setIsRegisterOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsRegisterOpen(false);
+  };
   return (
     <header className='bg-black text-white fixed top-0 left-0 right-0 z-50'>
       <nav className='px-4 py-4 max-w-7xl mx-auto flex justify-between items-center'>
@@ -54,10 +65,13 @@ const Navbar = () => {
           <a href="/" className='hover:text-orange-600'><FaInstagram /></a>
           <button onClick={openModal} className='bg-orange-600 px-6 py-2 font-medium rounded hover:bg-white
                 hover:text-orange-600 transition-all duration-200 ease-in'>Login</button>
+          <button onClick={handleOpenModal} className='bg-orange-600 px-6 py-2 font-medium rounded hover:bg-white
+                hover:text-orange-600 transition-all duration-200 ease-in'>Register</button>
         </div>
 
         {/*Our modal component is here*/}
         <Modal isOpen={isModalOpen} onClose={closeModal} />
+        {isRegisterOpen && <RegisterModal onClose={handleCloseModal} />}
 
         {/*mobile menu btn, display mobile screen*/}
         <div className='md:hidden'>
