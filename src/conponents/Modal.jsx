@@ -4,7 +4,7 @@ const Modal = ({ isOpen, onClose }) => {
     return (
         <div className={`fixed top-0 left-0 w-full h-full flex items-center justify-center ${isOpen ? "" : "hidden"}
         `}>
-            <div className="modal-container flex items-center justify-center min-h-screen">
+            <div className="fixed inset-0 flex items-center justify-center  bg-black bg-opacity-50">
                 <div className="bg-white p-8 h-auto lg:w-[400px] rounded-lg shadow-2xl">
                     {/* Modal content */}
                     <h2 className="text-3xl font-bold mb-8 text-blue-400">Welcome Bloger</h2>
